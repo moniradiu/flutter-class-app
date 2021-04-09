@@ -23,7 +23,9 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
+      backgroundColor: Color(0XFFFFFFFF),
+
       appBar: AppBar(
         title: Text(
           "I Am Talent",
@@ -33,7 +35,7 @@ class MyHomePage extends StatelessWidget {
       //body: Center(child: Image.asset("asset  s/talent.png")),
       body: Center(
           child: Image.network(
-              "https://pngtree.com/freepng/personality-cartoon-boy-character_3934062.html")),
+              "https://png.pngtree.com/png-clipart/20210311/original/pngtree-illustration-poor-people-png-image_6018533.jpg")),
     );
   }
 }
