@@ -23,19 +23,32 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.white,
-      backgroundColor: Color(0XFFFFFFFF),
-
-      appBar: AppBar(
-        title: Text(
-          "I Am Talent",
-          style: TextStyle(color: Colors.amberAccent),
+        // backgroundColor: Colors.white,
+        backgroundColor: Color(0XFFFFFFFF),
+        appBar: AppBar(
+          title: Text(
+            "Profile",
+            style: TextStyle(color: Colors.amberAccent),
+          ),
         ),
-      ),
-      //body: Center(child: Image.asset("asset  s/talent.png")),
-      body: Center(
-          child: Image.network(
-              "https://png.pngtree.com/png-clipart/20210311/original/pngtree-illustration-poor-people-png-image_6018533.jpg")),
-    );
+        //body: Center(child: Image.asset("asset  s/talent.png")),
+        body: Center(
+          child: Container(
+            height: 200,
+            width: 200,
+            decoration: BoxDecoration(
+                color: Colors.orange,
+                border: Border(
+                  bottom: BorderSide(
+                    width: 12,
+                    color: Colors.black,
+                  ),
+                  right: BorderSide(
+                    width: 30,
+                    color: Colors.black,
+                  ),
+                )),
+          ),
+        ));
   }
 }
