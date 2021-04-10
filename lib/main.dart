@@ -23,37 +23,60 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // backgroundColor: Colors.white,
-        backgroundColor: Color(0XFFFFFFFF),
-        appBar: AppBar(
-          title: Text(
-            "Profile",
-            style: TextStyle(color: Colors.amberAccent),
-          ),
+      // backgroundColor: Colors.white,
+      backgroundColor: Color(0XFFFFFFFF),
+      appBar: AppBar(
+        title: Text(
+          "Profile",
+          style: TextStyle(color: Colors.amberAccent),
         ),
-        //body: Center(child: Image.asset("asset  s/talent.png")),
-        body: Center(
-          child: Container(
-            height: 200,
-            width: 200,
-            decoration: BoxDecoration(
-                color: Colors.orange,
-                // border: Border(
-                //   bottom: BorderSide(
-                //     width: 12,
-                //     color: Colors.black,
-                //   ),
-                //   right: BorderSide(
-                //     width: 30,
-                //     color: Colors.black,
-                //   ),
-                // )
-                border: Border.all(width: 3, color: Colors.pink),
-                // borderRadius: BorderRadius.circular(10)
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20.0),
-                    bottomRight: Radius.circular(20.0))),
-          ),
-        ));
+      ),
+      //body: Center(child: Image.asset("asset  s/talent.png")),
+      // body: Center(
+      //   child: Container(
+      //     height: 200,
+      //     width: 200,
+      //     decoration: BoxDecoration(
+      //         color: Colors.orange,
+      //         // border: Border(
+      //         //   bottom: BorderSide(
+      //         //     width: 12,
+      //         //     color: Colors.black,
+      //         //   ),
+      //         //   right: BorderSide(
+      //         //     width: 30,
+      //         //     color: Colors.black,
+      //         //   ),
+      //         // )
+      //         border: Border.all(width: 3, color: Colors.pink),
+      //         // borderRadius: BorderRadius.circular(10)
+      //         borderRadius: BorderRadius.only(
+      //             topLeft: Radius.circular(20.0),
+      //             bottomRight: Radius.circular(20.0))),
+      //   ),
+      // )
+      body: Container(
+        child: Column(
+          children: [
+            Container(
+              height: 100,
+              color: Colors.teal,
+            ),
+            Container(
+              height: 100,
+              color: Colors.orange,
+            ),
+            Container(
+              height: 100,
+              color: Colors.red,
+            ),
+            Container(
+              height: 100,
+              color: Colors.purple,
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
