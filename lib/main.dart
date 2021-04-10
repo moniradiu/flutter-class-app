@@ -56,17 +56,20 @@ class MyHomePage extends StatelessWidget {
       //   ),
       // )
       body: Container(
-        width: 200,
+        //width: 300,
+        height: 500,
         color: Colors.black,
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: Row(
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           //mainAxisAlignment: MainAxisAlignment.start,
           //mainAxisAlignment: MainAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.center,
+
           //crossAxisAlignment: CrossAxisAlignment.start,
-          //crossAxisAlignment: CrossAxisAlignment.stretch,(responsive for use)
+          //crossAxisAlignment: CrossAxisAlignment.stretch,
+          //(responsive for use stretch)
           //crossAxisAlignment: CrossAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
