@@ -56,6 +56,8 @@ class MyHomePage extends StatelessWidget {
       //   ),
       // )
       body: Container(
+        width: 200,
+        color: Colors.black,
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           //mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,21 +65,29 @@ class MyHomePage extends StatelessWidget {
           //mainAxisAlignment: MainAxisAlignment.start,
           //mainAxisAlignment: MainAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.start,
+          //crossAxisAlignment: CrossAxisAlignment.stretch,(responsive for use)
+          //crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               height: 100,
+              width: 100,
               color: Colors.teal,
             ),
             Container(
               height: 100,
+              width: 100,
               color: Colors.orange,
             ),
             Container(
               height: 100,
+              width: 100,
               color: Colors.red,
             ),
             Container(
               height: 100,
+              width: 100,
               color: Colors.purple,
             )
           ],
