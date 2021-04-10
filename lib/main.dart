@@ -57,6 +57,12 @@ class MyHomePage extends StatelessWidget {
       // )
       body: Container(
         child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //mainAxisAlignment: MainAxisAlignment.start,
+          //mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: 100,
