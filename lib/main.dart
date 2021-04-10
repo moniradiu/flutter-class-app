@@ -38,16 +38,21 @@ class MyHomePage extends StatelessWidget {
             width: 200,
             decoration: BoxDecoration(
                 color: Colors.orange,
-                border: Border(
-                  bottom: BorderSide(
-                    width: 12,
-                    color: Colors.black,
-                  ),
-                  right: BorderSide(
-                    width: 30,
-                    color: Colors.black,
-                  ),
-                )),
+                // border: Border(
+                //   bottom: BorderSide(
+                //     width: 12,
+                //     color: Colors.black,
+                //   ),
+                //   right: BorderSide(
+                //     width: 30,
+                //     color: Colors.black,
+                //   ),
+                // )
+                border: Border.all(width: 3, color: Colors.pink),
+                // borderRadius: BorderRadius.circular(10)
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20.0),
+                    bottomRight: Radius.circular(20.0))),
           ),
         ));
   }
