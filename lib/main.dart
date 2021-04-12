@@ -22,80 +22,120 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+        child: Scaffold(
       // backgroundColor: Colors.white,
-      backgroundColor: Color(0XFFFFFFFF),
-      appBar: AppBar(
-        title: Text(
-          "Profile",
-          style: TextStyle(color: Colors.amberAccent),
-        ),
-      ),
-      //body: Center(child: Image.asset("asset  s/talent.png")),
-      // body: Center(
-      //   child: Container(
-      //     height: 200,
-      //     width: 200,
-      //     decoration: BoxDecoration(
-      //         color: Colors.orange,
-      //         // border: Border(
-      //         //   bottom: BorderSide(
-      //         //     width: 12,
-      //         //     color: Colors.black,
-      //         //   ),
-      //         //   right: BorderSide(
-      //         //     width: 30,
-      //         //     color: Colors.black,
-      //         //   ),
-      //         // )
-      //         border: Border.all(width: 3, color: Colors.pink),
-      //         // borderRadius: BorderRadius.circular(10)
-      //         borderRadius: BorderRadius.only(
-      //             topLeft: Radius.circular(20.0),
-      //             bottomRight: Radius.circular(20.0))),
-      //   ),
-      // )
-      body: Container(
-        //width: 300,
-        height: 500,
-        color: Colors.black,
-        child: Row(
-          //mainAxisAlignment: MainAxisAlignment.spaceAround,
-          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //mainAxisAlignment: MainAxisAlignment.start,
-          //mainAxisAlignment: MainAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.center,
+      backgroundColor: Colors.purple,
 
-          //crossAxisAlignment: CrossAxisAlignment.start,
-          //crossAxisAlignment: CrossAxisAlignment.stretch,
-          //(responsive for use stretch)
-          //crossAxisAlignment: CrossAxisAlignment.end,
+      body: Container(
+        width: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.teal,
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: AssetImage("assets/avatar.png"),
             ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.orange,
+            Text(
+              "Miss.Munira",
+              style: TextStyle(
+                fontFamily: "Pacifico",
+                fontSize: 28,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.red,
+            Text(
+              "Flutter Developer",
+              style: TextStyle(
+                fontFamily: "SourceSansPro",
+                fontSize: 24,
+                color: Colors.white,
+                letterSpacing: 2.5,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.purple,
+            Divider(
+              thickness: 3,
+              color: Colors.purple.shade400,
+              indent: 100,
+              endIndent: 100,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Card(
+              // elevation: 10,
+              // color: Colors.teal,
+
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              margin: EdgeInsets.symmetric(horizontal: 15),
+              child: Container(
+                height: 56,
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Row(children: [
+                  Icon(
+                    Icons.phone,
+                    color: Colors.purple,
+                    size: 28,
+                  ),
+                  SizedBox(
+                    width: 20,
+                    //height: 20,
+                  ),
+                  Text(
+                    "+01303457400",
+                    style: TextStyle(
+                      fontFamily: "SourceSansPro",
+                      fontSize: 24,
+                      color: Colors.purple,
+                      letterSpacing: 2.5,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ]),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Card(
+              // elevation: 10,
+              // color: Colors.teal,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              margin: EdgeInsets.symmetric(horizontal: 15),
+              child: Container(
+                height: 56,
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Row(children: [
+                  Icon(
+                    Icons.email,
+                    color: Colors.purple,
+                    size: 28,
+                  ),
+                  SizedBox(
+                    width: 20,
+                    //height: 20,
+                  ),
+                  Text(
+                    "moniradiu@gmail.com",
+                    style: TextStyle(
+                      fontFamily: "SourceSansPro",
+                      fontSize: 24,
+                      color: Colors.purple,
+                      letterSpacing: 2.5,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ]),
+              ),
             )
           ],
         ),
       ),
-    );
+    ));
   }
 }
