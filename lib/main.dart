@@ -1,3 +1,6 @@
+import 'dart:developer';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,116 +27,130 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      // backgroundColor: Colors.white,
-      backgroundColor: Colors.purple,
-
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage("assets/avatar.png"),
-            ),
-            Text(
-              "Miss.Munira",
-              style: TextStyle(
-                fontFamily: "Pacifico",
-                fontSize: 28,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              "Flutter Developer",
-              style: TextStyle(
-                fontFamily: "SourceSansPro",
-                fontSize: 24,
-                color: Colors.white,
-                letterSpacing: 2.5,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Divider(
-              thickness: 3,
-              color: Colors.purple.shade400,
-              indent: 100,
-              endIndent: 100,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Card(
-              // elevation: 10,
-              // color: Colors.teal,
-
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              margin: EdgeInsets.symmetric(horizontal: 15),
-              child: Container(
-                height: 56,
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Row(children: [
-                  Icon(
-                    Icons.phone,
-                    color: Colors.purple,
-                    size: 28,
-                  ),
-                  SizedBox(
-                    width: 20,
-                    //height: 20,
-                  ),
-                  Text(
-                    "+01303457400",
-                    style: TextStyle(
-                      fontFamily: "SourceSansPro",
-                      fontSize: 24,
-                      color: Colors.purple,
-                      letterSpacing: 2.5,
-                      fontWeight: FontWeight.normal,
+      //child: Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Drawer Example",
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      drawer: Drawer(
+        child: Container(
+          child: Column(
+            children: [
+              Container(
+                child: Stack(
+                  children: [
+                    Image.asset("assets/img.jpg"),
+                    Positioned(
+                      left: 90,
+                      top: 10,
+                      child: CircleAvatar(
+                        radius: 45,
+                        child: Image.asset("assets/avatar1.png"),
+                      ),
                     ),
-                  ),
-                ]),
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Card(
-              // elevation: 10,
-              // color: Colors.teal,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-              margin: EdgeInsets.symmetric(horizontal: 15),
-              child: Container(
-                height: 56,
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Row(children: [
-                  Icon(
-                    Icons.email,
-                    color: Colors.purple,
-                    size: 28,
-                  ),
-                  SizedBox(
-                    width: 20,
-                    //height: 20,
-                  ),
-                  Text(
-                    "moniradiu@gmail.com",
-                    style: TextStyle(
-                      fontFamily: "SourceSansPro",
-                      fontSize: 24,
-                      color: Colors.purple,
-                      letterSpacing: 2.5,
-                      fontWeight: FontWeight.normal,
+                    Positioned(
+                      left: 70,
+                      top: 95,
+                      child: Text(
+                        "Sirajum Munira",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: "Pacifico",
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
                     ),
-                  ),
-                ]),
+                    Positioned(
+                      left: 70,
+                      top: 120,
+                      child: Text(
+                        "Flutter Developer",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: "SourceSansPro",
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-            )
-          ],
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Profile"),
+                subtitle: Text("This is Female"),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.grey,
+              ),
+              ListTile(
+                leading: Icon(Icons.settings),
+                title: Text("Profile"),
+                subtitle: Text("This is Female"),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.grey,
+              ),
+              ListTile(
+                leading: Icon(Icons.notifications),
+                title: Text("Profile"),
+                subtitle: Text("This is Female"),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.grey,
+              ),
+              ListTile(
+                leading: Icon(Icons.contacts),
+                title: Text("Profile"),
+                subtitle: Text("This is Female"),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.grey,
+              ),
+              ListTile(
+                leading: Icon(Icons.event),
+                title: Text("Profile"),
+                subtitle: Text("This is Female"),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.grey,
+              ),
+              ListTile(
+                leading: Icon(Icons.mail),
+                title: Text("Profile"),
+                subtitle: Text("This is Female"),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.grey,
+              ),
+              ListTile(
+                leading: Icon(Icons.note_add),
+                title: Text("Profile"),
+                subtitle: Text("This is Female"),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+              Divider(
+                thickness: 2,
+                color: Colors.grey,
+              ),
+            ],
+          ),
         ),
       ),
     ));
