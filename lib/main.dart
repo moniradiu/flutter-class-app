@@ -80,8 +80,10 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
               ListTile(
-                tileColor: Color(0xFFE0F2F1),
-                leading: Icon(Icons.person),
+                leading: Icon(
+                  Icons.person,
+                  color: Colors.green,
+                ),
                 title: Text("Profile"),
                 subtitle: Text("This is Female"),
                 trailing: Icon(Icons.arrow_forward_ios),
@@ -92,8 +94,10 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.grey,
               ),
               ListTile(
-                tileColor: Color(0xFFB3E5FC),
-                leading: Icon(Icons.account_circle),
+                leading: Icon(
+                  Icons.account_circle,
+                  color: Colors.red,
+                ),
                 title: Text("Profile"),
                 subtitle: Text("This is Female"),
                 trailing: Icon(Icons.arrow_forward_ios),
@@ -104,8 +108,10 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.grey,
               ),
               ListTile(
-                tileColor: Color(0xFFF3E298),
-                leading: Icon(Icons.notifications),
+                leading: Icon(
+                  Icons.notifications,
+                  color: Colors.teal,
+                ),
                 title: Text("Profile"),
                 subtitle: Text("This is Female"),
                 trailing: Icon(Icons.arrow_forward_ios),
@@ -116,8 +122,10 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.grey,
               ),
               ListTile(
-                tileColor: Color(0xFFDDDCD6),
-                leading: Icon(Icons.contacts),
+                leading: Icon(
+                  Icons.contacts,
+                  color: Colors.lime,
+                ),
                 title: Text("Profile"),
                 subtitle: Text("This is Female"),
                 trailing: Icon(Icons.arrow_forward_ios),
@@ -128,8 +136,10 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.grey,
               ),
               ListTile(
-                tileColor: Color(0xFFAEECE4),
-                leading: Icon(Icons.event),
+                leading: Icon(
+                  Icons.event,
+                  color: Colors.redAccent,
+                ),
                 title: Text("Profile"),
                 subtitle: Text("This is Female"),
                 trailing: Icon(Icons.arrow_forward_ios),
@@ -140,8 +150,10 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.grey,
               ),
               ListTile(
-                tileColor: Color(0xFFDDD7FC),
-                leading: Icon(Icons.mail),
+                leading: Icon(
+                  Icons.mail,
+                  color: Colors.blueGrey,
+                ),
                 title: Text("Profile"),
                 subtitle: Text("This is Female"),
                 trailing: Icon(Icons.arrow_forward_ios),
@@ -152,8 +164,10 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.grey,
               ),
               ListTile(
-                tileColor: Color(0xFFF5E4F7),
-                leading: Icon(Icons.settings),
+                leading: Icon(
+                  Icons.settings,
+                  color: Colors.cyan,
+                ),
                 title: Text("Profile"),
                 subtitle: Text("This is Female"),
                 trailing: Icon(Icons.arrow_forward_ios),
