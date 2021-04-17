@@ -19,9 +19,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       routes: {
-        "/": (context) => PageOne(),
-        "pageTwo": (context) => PageTwo(),
-        "pageThree": (context) => PageThree(),
+        PageOne.path: (context) => PageOne(),
+        PageTwo.path: (context) => PageTwo(),
+        PageThree.path: (context) => PageThree(),
+        // "/": (context) => PageOne(),
+        // "pageTwo": (context) => PageTwo(),
+        // "pageThree": (context) => PageThree(),
       },
       // home: MyHomePage(),
       // theme: ThemeData(
@@ -29,7 +32,7 @@ class MyApp extends StatelessWidget {
       // visualDensity: VisualDensity.adaptivePlatformDensity,
       //),
 
-     // home: PageOne(),
+      // home: PageOne(),
     );
   }
 }

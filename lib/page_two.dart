@@ -12,6 +12,34 @@ class PageTwo extends StatelessWidget {
           "Page Two",
           style: TextStyle(color: Colors.black),
         ),
+        actions: [
+          PopupMenuButton(
+              onSelected: (value) {
+                //print(value);
+                if (value == "Page Three") {
+                  Route route =
+                      MaterialPageRoute(builder: (context) => PageThree());
+                  Navigator.push(context, route);
+                }
+              },
+              offset: Offset(30.0, 40.0),
+              itemBuilder: (BuildContext contex) {
+                return [
+                  PopupMenuItem(
+                    child: Text("Page One"),
+                    value: "Page One",
+                  ),
+                  PopupMenuItem(
+                    child: Text("Page Two"),
+                    value: "Page Two",
+                  ),
+                  PopupMenuItem(
+                    child: Text("Page Three"),
+                    value: "Page Three",
+                  ),
+                ];
+              }),
+        ],
       ),
       body: Container(
         width: double.infinity,
