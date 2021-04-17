@@ -17,13 +17,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Class App Demo',
       debugShowCheckedModeBanner: false,
+      initialRoute: "/",
+      routes: {
+        "/": (context) => PageOne(),
+        "pageTwo": (context) => PageTwo(),
+        "pageThree": (context) => PageThree(),
+      },
       // home: MyHomePage(),
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        // visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      // theme: ThemeData(
+      //   primarySwatch: Colors.blue,
+      // visualDensity: VisualDensity.adaptivePlatformDensity,
+      //),
 
-      home: PageOne(),
+     // home: PageOne(),
     );
   }
 }

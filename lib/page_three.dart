@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter_app4/page_three.dart';
 
+// ignore: unused_import
 import 'package:flutter_app4/page_one.dart';
 
 class PageThree extends StatelessWidget {
@@ -28,8 +29,9 @@ class PageThree extends StatelessWidget {
                   shadowColor: MaterialStateProperty.all(Colors.red),
                 ),
                 onPressed: () {
-                  Navigator.pop(context);
-                  Navigator.popAndPushNamed(context, "/PageOne");
+                 // Navigator.pop(context);
+                  Navigator.popAndPushNamed(context, "/");
+                  // Navigator.popAndPushNamed(context, "/PageOne");
                   // Navigator.push(context,
                   //     MaterialPageRoute(builder: (context) => PageOne()));
                 },
