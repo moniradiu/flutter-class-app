@@ -129,6 +129,21 @@ class SwitchClass extends State {
         },
         //child: Text("no"),
       ),
+      ElevatedButton(
+        onPressed: () {
+          final snackBar = SnackBar(
+            content: Text("Do Something"),
+            backgroundColor: Colors.deepPurple,
+            action: SnackBarAction(
+              label: "yes",
+              textColor: Colors.white,
+              onPressed: () {},
+            ),
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        },
+        child: Text("SnackBar"),
+      ),
     ]);
   }
 }
