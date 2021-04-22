@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MyNavigationBar(),
     );
   }
@@ -27,7 +28,27 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     // PageTwo(),
     // PageThree(),
 
-     
+    Container(
+      child: Text('Home Page',
+          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+      color: Colors.blue,
+      height: 200,
+      width: 200,
+    ),
+    Container(
+      child: Text("Search Page",
+          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+      color: Colors.red,
+      height: 200,
+      width: 200,
+    ),
+    Container(
+      child: Text("Profile Page",
+          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+      color: Colors.orange,
+      height: 200,
+      width: 200,
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -74,5 +95,3 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     );
   }
 }
-
-class PageOne {}
