@@ -1,149 +1,78 @@
-//
-// ignore: avoid_web_libraries_in_flutter
-//import 'dart:html';
-
 import 'package:flutter/material.dart';
-// ignore: unused_import
-import 'page_one.dart';
-// ignore: unused_import
-import 'page_two.dart';
-// ignore: unused_import
-import 'page_three.dart';
+//import 'package:flutter_app4/page_two.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
-// class MyApp extends StatelessWidget {
-// // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Flutter Class App Demo',
-//       debugShowCheckedModeBanner: false,
-//       // routes: {
-//       //   PageOne.path: (context) => PageOne(),
-//       //   PageTwo.path: (context) => PageTwo(),
-//       //   PageThree.path: (context) => PageThree(),
-//       // },
-//     );
-//   }
-// }
-
+/// This Widget is the main application widget.
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        // routes: {
-        //   PageOne.path: (context) => PageOne(),
-        //   PageTwo.path: (context) => PageTwo(),
-        //   PageThree.path: (context) => PageThree(),
-        // },
-        home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.blue,
-            title: Text("Flutter Switch Example"),
-          ),
-          body: Center(child: SwitchScreen()),
-        ));
+      home: MyNavigationBar(),
+    );
   }
 }
 
-class SwitchScreen extends StatefulWidget {
+class MyNavigationBar extends StatefulWidget {
+  //MyNavigationBar ({Key key}) : super(key: key);
+
   @override
-  SwitchClass createState() => new SwitchClass();
+  _MyNavigationBarState createState() => _MyNavigationBarState();
 }
 
-class SwitchClass extends State {
-  bool isSwitched = false;
-  var textValue = 'Switch is OFF';
+class _MyNavigationBarState extends State<MyNavigationBar> {
+  int _currentIndex = 0;
+  List<Widget> bodyItems = [
+    // PageOne(),
+    // PageTwo(),
+    // PageThree(),
 
-  void toggleSwitch(bool value) {
-    if (isSwitched == false) {
-      setState(() {
-        isSwitched = true;
-        textValue = 'Switch Button is ON';
-      });
-      print('Switch Button is ON');
-    } else {
-      setState(() {
-        isSwitched = false;
-        textValue = 'Switch Button is OFF';
-      });
-      print('Switch Button is OFF');
-    }
-  }
-
+     
+  ];
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Transform.scale(
-          scale: 2,
-          child: Switch(
-            onChanged: toggleSwitch,
-            value: isSwitched,
-            activeColor: Colors.blue,
-            activeTrackColor: Colors.yellow,
-            inactiveThumbColor: Colors.redAccent,
-            inactiveTrackColor: Colors.orange,
-          )),
-      Text(
-        '$textValue',
-        style: TextStyle(fontSize: 20),
+    return Scaffold(
+      appBar: AppBar(
+          title: const Text('Flutter BottomNavigationBar Example'),
+          backgroundColor: Colors.green),
+      body: Center(
+        child: bodyItems[_currentIndex],
       ),
-      ElevatedButton.icon(
-        label: Text("Click Me"),
-        icon: Icon(Icons.web),
-        style: ElevatedButton.styleFrom(
-          primary: Colors.green,
-        ),
-
-        onPressed: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text("This is alert dialog"),
-                  titleTextStyle: TextStyle(
-                    color: Colors.amber,
-                    fontSize: 20.0,
-                  ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0)),
-                  content: Text("This is Context"),
-                  actions: [
-                    TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: Text("yes")),
-                    TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: Text("No"))
-                  ],
-                );
-              });
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            backgroundColor: Colors.green,
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: "Search",
+              backgroundColor: Colors.yellow),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: "Profile",
+            backgroundColor: Colors.blue,
+          ),
+        ],
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
         },
-        //child: Text("no"),
+        backgroundColor: Colors.green,
+        iconSize: 40,
+        elevation: 5,
+        // type: BottomNavigationBarType.shifting,
+        // currentIndex: _selectedIndex,
+        // selectedItemColor: Colors.black,
+        // iconSize: 40,
+        // onTap: _onItemTapped,
+        // elevation: 5
       ),
-      ElevatedButton(
-        onPressed: () {
-          final snackBar = SnackBar(
-            content: Text("Do Something"),
-            backgroundColor: Colors.deepPurple,
-            action: SnackBarAction(
-              label: "yes",
-              textColor: Colors.white,
-              onPressed: () {},
-            ),
-          );
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        },
-        child: Text("SnackBar"),
-      ),
-    ]);
+    );
   }
 }
+
+class PageOne {}
