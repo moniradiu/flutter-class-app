@@ -50,14 +50,25 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     //   width: 200,
     // ),
   ];
+  int count = 0;
+  void _increment() {
+    setState(() {
+      count++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Flutter BottomNavigationBar'),
+          title: Text("BottomNavigationBar Lecture-$count"),
           backgroundColor: Colors.green),
       body: Center(
         child: bodyItems[_currentIndex],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _increment,
+        child: Icon(Icons.add),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
@@ -116,36 +127,49 @@ class PageOne extends StatelessWidget {
     //   ),
     // );
     //
-    // return Center(
-    //   child: GestureDetector(
-    //     child: InkWell(
-    //       onTap: () {
-    //         print("Tapped GestureDetector");
-    //       },
-    //       child: Container(
-    //         color: Colors.pinkAccent,
-    //         height: 200,
-    //         width: 200,
-    //         child: Text(
-    //           "Page One",
-    //           style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-    //         ),
-    //       ),
-    //     ),
-    //   ),
-    // );
+    return Center(
+      child: GestureDetector(
+        child: InkWell(
+          splashColor: Colors.amber,
+          onTap: () {
+            print("Tapped GestureDetector");
+          },
+          child: Container(
+            //color: Colors.pinkAccent,
+            height: 200,
+            width: 200,
+            child: Text(
+              "Page One",
+              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
 
 class PageTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.orange,
-      height: 200,
-      width: 200,
-      child: Text("Page Two",
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    return Center(
+      child: GestureDetector(
+        child: InkWell(
+          splashColor: Colors.pink,
+          onTap: () {
+            print("Tapped GestureDetector");
+          },
+          child: Container(
+            //color: Colors.pinkAccent,
+            height: 200,
+            width: 200,
+            child: Text(
+              "Page Two",
+              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -153,12 +177,24 @@ class PageTwo extends StatelessWidget {
 class PageThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-      height: 200,
-      width: 200,
-      child: Text("Page Three",
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    return Center(
+      child: GestureDetector(
+        child: InkWell(
+          splashColor: Colors.purple,
+          onTap: () {
+            print("Tapped GestureDetector");
+          },
+          child: Container(
+            //color: Colors.pinkAccent,
+            height: 200,
+            width: 200,
+            child: Text(
+              "Page Three",
+              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
