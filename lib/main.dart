@@ -24,37 +24,37 @@ class MyNavigationBar extends StatefulWidget {
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int _currentIndex = 0;
   List<Widget> bodyItems = [
-    // PageOne(),
-    // PageTwo(),
-    // PageThree(),
+    PageOne(),
+    PageTwo(),
+    PageThree(),
 
-    Container(
-      child: Text('Home Page',
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-      color: Colors.blue,
-      height: 200,
-      width: 200,
-    ),
-    Container(
-      child: Text("Search Page",
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-      color: Colors.red,
-      height: 200,
-      width: 200,
-    ),
-    Container(
-      child: Text("Profile Page",
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
-      color: Colors.orange,
-      height: 200,
-      width: 200,
-    ),
+    // Container(
+    //   child: Text('Home Page',
+    //       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    //   color: Colors.blue,
+    //   height: 200,
+    //   width: 200,
+    // ),
+    // Container(
+    //   child: Text("Search Page",
+    //       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    //   color: Colors.red,
+    //   height: 200,
+    //   width: 200,
+    // ),
+    // Container(
+    //   child: Text("Profile Page",
+    //       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    //   color: Colors.orange,
+    //   height: 200,
+    //   width: 200,
+    // ),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Flutter BottomNavigationBar Example'),
+          title: const Text('Flutter BottomNavigationBar'),
           backgroundColor: Colors.green),
       body: Center(
         child: bodyItems[_currentIndex],
@@ -92,6 +92,73 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
         // onTap: _onItemTapped,
         // elevation: 5
       ),
+    );
+  }
+}
+
+class PageOne extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // return Center(
+    //   child: GestureDetector(
+    //     onTap: () {
+    //       print("Tapped GestureDetector");
+    //     },
+    //     child: Container(
+    //       color: Colors.pinkAccent,
+    //       height: 200,
+    //       width: 200,
+    //       child: Text(
+    //         "Page One",
+    //         style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+    //       ),
+    //     ),
+    //   ),
+    // );
+    //
+    // return Center(
+    //   child: GestureDetector(
+    //     child: InkWell(
+    //       onTap: () {
+    //         print("Tapped GestureDetector");
+    //       },
+    //       child: Container(
+    //         color: Colors.pinkAccent,
+    //         height: 200,
+    //         width: 200,
+    //         child: Text(
+    //           "Page One",
+    //           style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+    //         ),
+    //       ),
+    //     ),
+    //   ),
+    // );
+  }
+}
+
+class PageTwo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.orange,
+      height: 200,
+      width: 200,
+      child: Text("Page Two",
+          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
+    );
+  }
+}
+
+class PageThree extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.red,
+      height: 200,
+      width: 200,
+      child: Text("Page Three",
+          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold)),
     );
   }
 }
