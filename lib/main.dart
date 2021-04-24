@@ -40,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Colors.green[100],
     Colors.lime[200],
   ];
+  var dropDownItemValue = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,20 +48,35 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       //body: ListView.builder(
-      body: ListView.separated(
-        separatorBuilder: (context, index) {
-          return Divider(
-            thickness: 10,
-          );
-        },
-        physics: BouncingScrollPhysics(),
-        itemCount: 8,
-        itemBuilder: (context, index) {
-          return Container(
-            height: 150,
-            color: color[index],
-          );
-        },
+      body: Column(
+        children: [
+          DropdownButton(
+            autofocus: false,
+            focusColor: Colors.red,
+            dropdownColor: Colors.yellow[200],
+            onChanged: (value) {
+              setState(() {
+                dropDownItemValue = value;
+              });
+              print(dropDownItemValue);
+            },
+            value: dropDownItemValue,
+            underline: Container(
+              padding: EdgeInsets.all(2),
+            ),
+            // icon: Icon(Icons.add),
+            //elevation: 2,
+            items: [
+              DropdownMenuItem(
+                child: Text(" item 1"),
+                value: 0,
+              ),
+              DropdownMenuItem(child: Text(" item 2"), value: 1),
+              DropdownMenuItem(child: Text(" item 3"), value: 2),
+              DropdownMenuItem(child: Text(" item 4"), value: 3),
+            ],
+          )
+        ],
       ),
     );
   }
