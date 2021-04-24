@@ -66,10 +66,14 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
       body: Center(
         child: bodyItems[_currentIndex],
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: _increment,
-        child: Icon(Icons.add),
+        icon: Icon(Icons.add),
+        label: Text("Add"),
+        backgroundColor: Colors.orange,
       ),
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterFloat,
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
@@ -174,27 +178,63 @@ class PageTwo extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class PageThree extends StatelessWidget {
+  // List<String> listItems = ["Hello", "World", "Flutter", "Love"];
+  List myProducts = List.generate(100, (index) {
+    return {"id": index, "title": "Product \#$index", "price": index};
+  });
+
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: GestureDetector(
-        child: InkWell(
-          splashColor: Colors.purple,
-          onTap: () {
-            print("Tapped GestureDetector");
-          },
-          child: Container(
-            //color: Colors.pinkAccent,
-            height: 200,
-            width: 200,
-            child: Text(
-              "Page Three",
-              style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+    return Container(
+      child: ListView.builder(
+        itemCount: myProducts.length,
+        itemBuilder: (BuildContext ctx, index) {
+          // Display the list item
+          return Dismissible(
+            key: UniqueKey(),
+
+            // only allows the user swipe from right to left
+            direction: DismissDirection.endToStart,
+
+            // Remove this product from the list
+            // In production enviroment, you may want to send some request to delete it on server side
+            onDismissed: (_) {
+              setState(() {
+                myProducts.removeAt(index);
+              });
+            },
+
+            // Display item's title, price...
+            child: Card(
+              margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+              child: ListTile(
+                leading: CircleAvatar(
+                  child: Text(myProducts[index]["id"].toString()),
+                ),
+                title: Text(myProducts[index]["title"]),
+                subtitle: Text("\$${myProducts[index]["price"].toString()}"),
+                trailing: Icon(Icons.arrow_back),
+              ),
             ),
-          ),
-        ),
+
+            // This will show up when the user performs dismissal action
+            // It is a red background and a trash icon
+            background: Container(
+              color: Colors.red,
+              margin: EdgeInsets.symmetric(horizontal: 15),
+              alignment: Alignment.centerRight,
+              child: Icon(
+                Icons.delete,
+                color: Colors.white,
+              ),
+            ),
+          );
+        },
       ),
     );
   }
+
+  void setState(Null Function() param0) {}
 }
