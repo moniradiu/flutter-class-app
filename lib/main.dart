@@ -48,39 +48,118 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       //body: ListView.builder(
-      body: Column(
+      body: GridView.count(
+        crossAxisCount: 2,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 10,
+        padding: EdgeInsets.all(10),
         children: [
-          DropdownButton(
-            autofocus: false,
-            focusColor: Colors.red,
-            dropdownColor: Colors.yellow[200],
-            onChanged: (value) {
-              setState(() {
-                dropDownItemValue = value;
-              });
-              print(dropDownItemValue);
-            },
-            value: dropDownItemValue,
-            underline: Container(
-              padding: EdgeInsets.all(2),
-            ),
-            // icon: Icon(Icons.add),
-            //elevation: 2,
-            items: [
-              DropdownMenuItem(
-                child: Text(" item 1"),
-                value: 0,
-              ),
-              DropdownMenuItem(child: Text(" item 2"), value: 1),
-              DropdownMenuItem(child: Text(" item 3"), value: 2),
-              DropdownMenuItem(child: Text(" item 4"), value: 3),
-            ],
-          )
+          Container(
+            height: 300,
+            width: 300,
+            child: Text("Item 1"),
+            color: Colors.amber[200],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.red[100],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.green[100],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.pink[200],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.orange[200],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.purple[100],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.teal[400],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.purple[200],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.orange[400],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.purple[400],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.lime[400],
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            child: Text("Item 1"),
+            color: Colors.cyan[100],
+          ),
         ],
       ),
     );
   }
 }
+
+//  children: [
+//           DropdownButton(
+//             autofocus: false,
+//             focusColor: Colors.red,
+//             dropdownColor: Colors.yellow[200],
+//             onChanged: (value) {
+//               setState(() {
+//                 dropDownItemValue = value;
+//               });
+//               print(dropDownItemValue);
+//             },
+//             value: dropDownItemValue,
+//             underline: Container(
+//               padding: EdgeInsets.all(2),
+//             ),
+//             // icon: Icon(Icons.add),
+//             //elevation: 2,
+//             items: [
+//               DropdownMenuItem(
+//                 child: Text(" item 1"),
+//                 value: 0,
+//               ),
+//               DropdownMenuItem(child: Text(" item 2"), value: 1),
+//               DropdownMenuItem(child: Text(" item 3"), value: 2),
+//               DropdownMenuItem(child: Text(" item 4"), value: 3),
+//             ],
+//           )
+//         ],
 
 //  child: SingleChildScrollView(
 //         padding: const EdgeInsets.all(15),
