@@ -29,108 +29,127 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var textEditingController = TextEditingController();
-  List<Color> color = [
-    Colors.amber[100],
-    Colors.pink[100],
-    Colors.purple[200],
-    Colors.blueGrey[100],
-    Colors.blue[100],
-    Colors.red[100],
-    Colors.green[100],
-    Colors.lime[200],
+  // var textEditingController = TextEditingController();
+  // List<Color> color = [
+  //   Colors.amber[100],
+  //   Colors.pink[100],
+  //   Colors.purple[200],
+  //   Colors.blueGrey[100],
+  //   Colors.blue[100],
+  //   Colors.red[100],
+  //   Colors.green[100],
+  //   Colors.lime[200],
+  // ];
+  // var dropDownItemValue = 0;
+
+  List<String> images = [
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
+    "https://www.pngarts.com/files/3/Logo-PNG-Download-Image.png",
+    "https://freepikpsd.com/wp-content/uploads/2019/10/flowers-logo-png-6-Transparent-Images.png",
+    "https://upload.wikimedia.org/wikipedia/commons/3/33/Vanamo_Logo.png",
   ];
-  var dropDownItemValue = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      //body: ListView.builder(
-      body: GridView.count(
-        crossAxisCount: 2,
-        mainAxisSpacing: 10,
-        crossAxisSpacing: 10,
-        padding: EdgeInsets.all(10),
-        children: [
-          Container(
-            height: 300,
-            width: 300,
-            child: Text("Item 1"),
-            color: Colors.amber[200],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.red[100],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.green[100],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.pink[200],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.orange[200],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.purple[100],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.teal[400],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.purple[200],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.orange[400],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.purple[400],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.lime[400],
-          ),
-          Container(
-            height: 200,
-            width: 200,
-            child: Text("Item 1"),
-            color: Colors.cyan[100],
-          ),
-        ],
-      ),
-    );
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        //body: ListView.builder(
+        body: Container(
+            padding: EdgeInsets.all(12.0),
+            child: GridView.builder(
+              itemCount: images.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 4.0,
+                  mainAxisSpacing: 4.0),
+              itemBuilder: (BuildContext context, int index) {
+                return Image.network(images[index]);
+              },
+            )));
   }
 }
+
+// GridView.count(
+//         crossAxisCount: 2,
+//         mainAxisSpacing: 10,
+//         crossAxisSpacing: 10,
+//         padding: EdgeInsets.all(10),
+//         children: [
+//           Container(
+//             height: 300,
+//             width: 300,
+//             child: Text("Item 1"),
+//             color: Colors.amber[200],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.red[100],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.green[100],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.pink[200],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.orange[200],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.purple[100],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.teal[400],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.purple[200],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.orange[400],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.purple[400],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.lime[400],
+//           ),
+//           Container(
+//             height: 200,
+//             width: 200,
+//             child: Text("Item 1"),
+//             color: Colors.cyan[100],
+//           ),
+//         ],
+//       ),
 
 //  children: [
 //           DropdownButton(
