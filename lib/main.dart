@@ -1,20 +1,26 @@
+//import 'package:custom_bottom_navigation_bar/custom_bottom_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 // ignore: unused_import
 import 'dart:developer';
 
+import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(MyApp(
+      // title:"Drewar App",
+      // home:MyHomePage(),
+      ));
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: MyHomePage(),
     );
@@ -22,10 +28,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  // MyHomePage({Key key, this.title}) : super(key: key);
-
-  // final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -35,193 +37,129 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Product Data",
-            style: TextStyle(color: Colors.black),
+          appBar: AppBar(
+            title: Text(
+              "Flutter Drawer Long List",
+              style: TextStyle(color: Colors.black),
+            ),
           ),
-        ),
-        drawer: Drawer(
-          child: Container(
-            child: Column(
+          drawer: Drawer(
+            child: ListView(
               children: [
-                Container(
-                  child: Stack(
-                    children: [
-                      Image.asset("assets/img.jpg"),
-                      Positioned(
-                        left: 90,
-                        top: 10,
-                        child: CircleAvatar(
-                          radius: 45,
-                          child: Image.asset("assets/avatar1.png"),
+                DrawerHeader(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: <Color>[
+                    Colors.purple,
+                    Colors.purpleAccent,
+                  ])),
+                  child: Container(
+                      child: Column(
+                    children: <Widget>[
+                      Material(
+                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                        elevation: 10,
+                        child: Image.asset(
+                          "assets/avatar1.png",
+                          width: 80,
+                          height: 80,
                         ),
                       ),
-                      Positioned(
-                        left: 70,
-                        top: 95,
-                        child: Text(
-                          "Fahad Bhuyain",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: "Pacifico",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
+                      Padding(padding: EdgeInsets.all(8.0)),
+                      Text(
+                        "Flutter Devloper",
+                        style: TextStyle(color: Colors.white, fontSize: 25.0),
                       ),
-                      Positioned(
-                        left: 70,
-                        top: 120,
-                        child: Text(
-                          "Flutter Developer",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: "SourceSansPro",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 70,
-                        top: 120,
-                        child: Text(
-                          "Flutter Developer",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontFamily: "SourceSansPro",
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
-                        ),
-                      )
                     ],
-                  ),
+                  )),
                 ),
-                ListTile(
-                    leading: Icon(
-                      Icons.home,
-                      color: Colors.green,
-                      size: 28,
-                    ),
-                    title: Text(
-                      "Home",
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    subtitle: Text("Product Page"),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {
-                      Navigator.pop(context);
-                    }),
-                Divider(
-                  thickness: 2,
-                  color: Colors.grey,
-                ),
-                ListTile(
-                    leading: Icon(
-                      Icons.data_usage,
-                      color: Colors.red,
-                      size: 28,
-                    ),
-                    title: Text("Product"),
-                    subtitle: Text("Product Page"),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {
-                      Navigator.pop(context);
-                    }),
-                Divider(
-                  thickness: 2,
-                  color: Colors.grey,
-                ),
-                ListTile(
-                    leading: Icon(
-                      Icons.login_rounded,
-                      color: Colors.teal[200],
-                      size: 28,
-                    ),
-                    title: Text("Log In"),
-                    subtitle: Text("Log Page"),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {
-                      Navigator.pop(context);
-                    }),
-                Divider(
-                  thickness: 2,
-                  color: Colors.grey,
-                ),
-                ListTile(
-                    leading: Icon(
-                      Icons.list_alt_rounded,
-                      color: Colors.green[900],
-                      size: 28,
-                    ),
-                    title: Text("Sing Up"),
-                    subtitle: Text("Fill From Information"),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {
-                      Navigator.pop(context);
-                    }),
-                Divider(
-                  thickness: 2,
-                  color: Colors.grey,
-                ),
-                ListTile(
-                    leading: Icon(
-                      Icons.message,
-                      color: Colors.pink[900],
-                      size: 28,
-                    ),
-                    title: Text("Message"),
-                    subtitle: Text("check Message Box"),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {
-                      Navigator.pop(context);
-                    }),
-                Divider(
-                  thickness: 2,
-                  color: Colors.grey,
-                ),
-                ListTile(
-                    leading: Icon(
-                      Icons.notifications,
-                      color: Colors.blue[700],
-                      size: 28,
-                    ),
-                    title: Text("Notification"),
-                    subtitle: Text("Check Updates Information"),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {
-                      Navigator.pop(context);
-                    }),
-                Divider(
-                  thickness: 2,
-                  color: Colors.grey,
-                ),
-                ListTile(
-                    leading: Icon(
-                      Icons.settings,
-                      color: Colors.purple[900],
-                      size: 28,
-                    ),
-                    title: Text("Setting"),
-                    subtitle: Text("please profile seeting"),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: () {
-                      Navigator.pop(context);
-                    }),
-                Divider(
-                  thickness: 2,
-                  color: Colors.grey,
-                ),
+                CustomListTile(Icons.person, "Profile", () => {}),
+                CustomListTile(Icons.notifications, "Notifications", () => {}),
+                CustomListTile(Icons.email, "Email", () => {}),
+                CustomListTile(Icons.account_box, "Account", () => {}),
+                CustomListTile(Icons.add_box, "Check", () => {}),
+                CustomListTile(Icons.message, "Messages", () => {}),
+                CustomListTile(Icons.list, "Sing Up", () => {}),
+                CustomListTile(Icons.settings, "Settings", () => {}),
+                CustomListTile(Icons.login, "Login", () => {}),
+                CustomListTile(Icons.lock, "Log Out", () => {}),
               ],
             ),
           ),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[],
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[],
+            ),
+          ),
+          bottomNavigationBar: FancyBottomNavigation(
+            tabs: [
+              TabData(iconData: Icons.home, title: "Home"),
+              TabData(iconData: Icons.search, title: "Search"),
+              TabData(iconData: Icons.shopping_cart, title: "Basket")
+            ],
+            onTabChangedListener: (position) {
+              setState(() {
+                // ignore: unused_local_variable
+                var currentPage = position;
+              });
+            },
+          )
+          // bottomNavigationBar: CurvedNavigationBar(
+          //   height: 60,
+          //   color: Colors.grey[200],
+          //   backgroundColor: Colors.purple,
+          //   items: <Widget>[
+          //     Icon(Icons.home, size: 30),
+          //     Icon(Icons.add_chart, size: 30),
+          //     Icon(Icons.list, size: 30),
+          //   ],
+          //   onTap: (index) {
+          //     //Handle button tap
+          //   },
+          // ),
+          ),
+    );
+  }
+}
+
+// ignore: must_be_immutable
+class CustomListTile extends StatelessWidget {
+  IconData icon;
+  String text;
+  Function onTap;
+
+  CustomListTile(this.icon, this.text, this.onTap);
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
+      child: Container(
+        decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: Colors.grey.shade300))),
+        child: InkWell(
+          splashColor: Colors.purple,
+          //onTap: () => {},
+          onTap: () => {Navigator.of(context).pop()},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Container(
+                height: 50,
+                child: Row(
+                  children: <Widget>[
+                    Icon(icon),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        text,
+                        style: TextStyle(fontSize: 16.0),
+                      ),
+                    ),
+                    Icon(Icons.arrow_right)
+                  ],
+                ),
+              )
+            ],
           ),
         ),
       ),
